@@ -1,0 +1,44 @@
+<!-- PROTOTIPO DE IDEA
+Entiendo que estás desarrollando un programa en el que el usuario ingresa números y
+deseas establecer un límite máximo de 100 para los números. Si el usuario ingresa 
+un número mayor a 100 tres veces, quieres mostrar una imagen y reproducir un archivo de audio.
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Límite de Números</title>
+</head>
+<body>
+    <input type="number" id="numberInput">
+    <button onclick="checkNumber()">Verificar</button>
+
+    <script>
+        var countOverLimit = 0;
+
+        function checkNumber() {
+            var numInput = document.getElementById("numberInput");
+            var num = parseInt(numInput.value);
+
+            if (num > 100) {
+                countOverLimit++;
+                if (countOverLimit >= 3) {
+                    showImageAndAudio();
+                }
+            } else {
+                countOverLimit = 0;
+            }
+
+            numInput.value = "";
+        }
+
+        function showImageAndAudio() {
+            // Aquí puedes agregar el código para mostrar la imagen y reproducir el audio.
+            // Por ejemplo, puedes cambiar la fuente de una imagen y reproducir un audio usando el elemento <audio>.
+
+            // Ejemplo de cómo reproducir un audio usando el elemento <audio>:
+            var audio = new Audio("archivo_de_audio.mp3");
+            audio.play();
+        }
+    </script>
+</body>
+</html> -->

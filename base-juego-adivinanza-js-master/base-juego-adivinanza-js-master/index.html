@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Juego de adivinar el número</title>
+    <script src="script.js"></script>
+    <script>
+        let numeroAzar = Math.floor(Math.random()*100) + 1 
+
+        let numeroEntrada = document.addEventListener("DOMContentLoaded", numeroEntrada())
+        let mensaje = document.addEventListener("DOMContentLoaded", mensaje())
+
+        function chequearResultado(){
+            let numeroIngresado = parseInt(numeroEntrada.value)
+
+            if(numeroIngresado < 1 || numeroIngresado > 100 || isNan(numeroIngresado))
+                mensaje.textContent = 'Por favor, introduce un numero vàlido entre 1 y 100'
+                return
+        }
+
+        if(numeroIngresado === numeroAzar){
+            mensaje.textContent = 'Felicidades! Has adivinado el numero!';
+            mensaje.style.color = 'green';
+            numeroEntrada.disabled = true;
+        }else if(numeroIngresado < numeroAzar){
+            mensaje.textContent = 'Mas alto! El nùmero es mayor al que dijiste';
+            mensaje.style.color = 'red';   
+        } else {
+            mensaje.textContent = '¡Màs bajo! El nùmero es menor al que dijiste';
+            mensaje.style.color = 'red'
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Adivina el número</h1>
+    <p>Introduce un número entre 1 y 100:</p>
+    <input type="number" id="numeroEntrada">
+    <button>Comprobar</button>
+    <p id="mensaje"></p>
+
+    
+</body>
+
+</html> 
